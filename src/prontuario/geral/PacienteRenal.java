@@ -1,6 +1,6 @@
 package prontuario.geral;
 
-public class PacienteRenal extends Paciente{
+public final class PacienteRenal extends Paciente{
 
 
 	boolean transplantado;
@@ -13,6 +13,7 @@ public class PacienteRenal extends Paciente{
 		this.transplantado = transp;
 		this.quantidadeDialise = dialise;
 		
+		
 	}
 	
 	public PacienteRenal(String cpf, String nome, char tipo, char fator, float altura, 
@@ -22,13 +23,12 @@ public class PacienteRenal extends Paciente{
 		this.transplantado = transp;
 		this.quantidadeDialise = dialise;
 	}
-	
-	public float calcularIMC()
-	{
-		return super.calcularIMC()*0.85f;
+
+	@Override
+	public float calcularIMC2() {
+		// TODO Auto-generated method stub
+		return (this.peso/(this.altura*this.altura))*0.85f;
 	}
-
-
 	
 	
 }

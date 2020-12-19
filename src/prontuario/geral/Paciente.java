@@ -9,7 +9,7 @@ public class Paciente {
 	float altura;
 	float peso;
 	
-	static int CONTADOR_INSTANCIAS = 0;
+	private static int CONTADOR_INSTANCIAS = 0;
 	
 	public Paciente(String cpf, String nome, char tipo, char fator, float altura, float peso)
 	{
@@ -19,19 +19,18 @@ public class Paciente {
 		this.fatorRH = fator;
 		this.altura = altura;
 		this.peso = peso;
-		CONTADOR_INSTANCIAS++;
+		incrementarContador();
 	}
 	
 	public Paciente(String cpf, String nome)
 	{
 		this.nome = nome;
 		this.cpf = cpf;
-		CONTADOR_INSTANCIAS++;
+		incrementarContador();
 	}
 	
-	public float calcularIMC()
-	{
-		return this.peso/(this.altura*this.altura);
+	public float calcularIMC2() {
+		return 0f;
 	}
 
 	@Override
@@ -63,6 +62,17 @@ public class Paciente {
 		} else if (!nome.equals(other.nome))
 			return false;
 		return true;
+	}
+	
+	public static int getContador()
+	{
+		return CONTADOR_INSTANCIAS;
+	}
+	
+	
+	private static void incrementarContador()
+	{
+		CONTADOR_INSTANCIAS++;
 	}
 	
 	

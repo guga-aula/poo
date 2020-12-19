@@ -1,6 +1,6 @@
 package prontuario.geral;
 
-public class PacienteOncologico extends Paciente{
+public final class PacienteOncologico extends Paciente{
 
 	int quantidadeRadioterapia;
 	int quantidadeQuimioterapia;
@@ -20,12 +20,21 @@ public class PacienteOncologico extends Paciente{
 		this.quantidadeQuimioterapia = quimio;
 		this.quantidadeRadioterapia = radio;
 	}
-	
-	
-	public float calcularIMC()
+
+	public float calcularIMC2()
 	{
-		return this.peso/(this.altura*this.altura)*0.65f;
+		return (this.peso/(this.altura*this.altura))*0.6f;
 	}
+
+	@Override
+	public String toString() {
+		return "PacienteOncologico [quantidadeRadioterapia=" + quantidadeRadioterapia + ", quantidadeQuimioterapia="
+				+ quantidadeQuimioterapia + ", cpf=" + cpf + ", nome=" + nome + ", tipoSanguineo=" + tipoSanguineo
+				+ ", fatorRH=" + fatorRH + ", altura=" + altura + ", peso=" + peso + "]";
+	}
+	
+	
+	
 
 
 }
